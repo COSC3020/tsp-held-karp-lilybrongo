@@ -13,16 +13,16 @@ function tsp_hk(distanceMatrix) {
         return 0;
     }
 
-    // memo[visitedCities][currentCity] holds the shortest cost to reach 'currentCity'
-    // with the cities in 'visitedCities' already visited
-    const memo = Array(1 << n)
+    const memo = Array(n+1)
         .fill(null)
-        .map(() => Array(n).fill(Infinity));
+        .map(() => Array(1 << (n+1)).fill(0);
+
 
     // Initialize: Starting at each city with only that city visited
     for (let i = 0; i < n; i++) {
         memo[1 << i][i] = 0; // Cost to visit only city `i` is 0
     }
+
 
     // Iterate over all subsets of visited cities (bitmask)
     for (let visitedCities = 0; visitedCities < (1 << n); visitedCities++) {
