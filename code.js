@@ -5,7 +5,7 @@ function tsp_hk(distanceMatrix) {
     //After processing all subsets, the result is found by calculating the cost of completing the tour by returning to the starting city.
     const n = distanceMatrix.length;
 
-    console.log(`\n+ cities: ${n}`);
+    console.log(`\n+ cities: ${n}`); 
 
     // Base case: If there are 0 or 1 cities, no tour is needed
     // The idea of if myself or an already visited city the bug can't jump to these spots
