@@ -47,4 +47,16 @@ What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
 
-The worst-case asymptotic complexity for my implementation would be $O(n * 2^n)$. 
+The worst-case asymptotic complexity for my implementation would be $\Theta(n^2 * 2^n)$. This is because for the problem we have n cities, but there are $2^(n-1)$ subsets of the cities, this is also not including the starting city. One we have the subset, for each we have to calculate the cost of the subset ending at each city (evaluate the trip cost). This will take $\Theta(n)$ for iterations. Next we have to look at the recursivecall. For each subset and end city, we have to calculate the cost and this will iterate over all posible transitions. The worst case memory complexity is $\Theta(n * 2^n)$. This is because the memoization table needs to store the results for each subset and end city. So as we found out in the previous complexitythe total entries is $2^(n-1) * n$. Each entry also stores a single cost value which would have a time complexity of $\Theta(1)$. Once we have this, we can then look at the one recursive call per city, this would be $\Theta(1)$. SO for the memory complexity we have $\Theta(n * 2^n)$. 
+
+References and Resources:
+I watched a lot of extra videos to get an idea of how to do this problem. I checked others repositories but all the ones I looked at referenced bit masking so I have a basic understanding of it ut not enough to implement it myself so I stuck with a set path. 
+https://www.youtube.com/watch?v=-JjA4BLQyqE
+https://medium.com/basecs/speeding-up-the-traveling-salesman-using-dynamic-programming-b76d7552e8dd
+https://www.geeksforgeeks.org/travelling-salesman-problem-using-dynamic-programming/
+
+I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.
+
